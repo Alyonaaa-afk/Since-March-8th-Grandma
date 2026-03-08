@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С 8 марта, бабушка!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fbe9f0 0%, #f8d5b0 100%);
+            font-family: 'Georgia', 'Palatino', 'Times New Roman', serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            max-width: 1400px;
+            width: 100%;
+            background: #fff9f7;
+            border-radius: 60px 60px 50px 50px;
+            box-shadow: 0 30px 45px rgba(160, 100, 120, 0.25);
+            overflow: hidden;
+            border: 3px solid #ffe2d4;
+        }
+
+        .lace-top {
+            background: #ffd9cc;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            background: repeating-linear-gradient( -45deg, #ffc4b1 0px, #ffc4b1 12px, #ffe6d5 12px, #ffe6d5 24px);
+            border-bottom: 4px solid #feb2a2;
+            font-size: 24px;
+            color: #a55e5e;
+        }
+
+        .content {
+            padding: 40px 50px;
+            background: #fffaf8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            color: #884e4e;
+            text-align: center;
+            text-shadow: 3px 3px 0 #ffede1;
+            margin-bottom: 20px;
+            border-bottom: 3px double #ffbfaf;
+            padding-bottom: 15px;
+            width: 100%;
+        }
+
+        .elegant-sub {
+            text-align: center;
+            font-size: 2rem;
+            color: #a06565;
+            margin-bottom: 30px;
+            font-style: italic;
+            background: #fff0e7;
+            display: inline-block;
+            padding: 0.5rem 3rem;
+            border-radius: 40px 10px 40px 10px;
+            border: 2px solid #ffcfc0;
+            box-shadow: 0 7px 0 #e7bcac;
+        }
+
+        /* КРАСИВОЕ ПОЗДРАВЛЕНИЕ */
+        .beautiful-verse {
+            background: #fef3ed;
+            padding: 40px 40px;
+            border-radius: 120px 30px 120px 30px;
+            margin: 30px 0 40px;
+            border: 2px solid #ffbcac;
+            box-shadow: inset 0 0 25px #ffe3d6;
+            font-size: 1.6rem;
+            line-height: 2;
+            color: #452b2b;
+            text-align: center;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .beautiful-verse i {
+            color: #bc6f6f;
+            font-size: 2.2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* ЗАГОЛОВКИ СЕКЦИЙ */
+        .section-title {
+            text-align: center;
+            font-size: 2.3rem;
+            color: #a54242;
+            margin: 50px 0 30px;
+            font-family: 'Segoe Script', cursive;
+            background: #fff8f0;
+            padding: 15px 40px;
+            border-radius: 100px;
+            border: 3px dotted #ffaeae;
+            box-shadow: 0 8px 0 #e7b3b3;
+            display: inline-block;
+        }
+
+        /* ФОТОГРАФИИ - С МЕСТАМИ ДЛЯ ФОТО */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            margin: 20px 0 20px;
+        }
+
+        .photo-card {
+            flex: 0 0 280px;
+            background: #fff4ec;
+            border-radius: 70px 70px 40px 40px;
+            padding: 30px 20px 25px;
+            box-shadow: 0 20px 25px -5px #e2b9b9, 0 0 0 3px #fff, 0 0 0 7px #ffdacf;
+            border: 2px dashed #ffad9a;
+            transition: all 0.25s;
+            text-align: center;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-15px) rotate(1deg);
+        }
+
+        .photo-frame {
+            width: 200px;
+            height: 200px;
+            background: #edd7cd;
+            border-radius: 45% 55% 45% 55%;
+            border: 8px solid #fff5ea;
+            box-shadow: inset 0 0 0 5px #feb7a2, 0 15px 0 #ad7a7a;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 7rem;
+            overflow: hidden;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 45% 55% 45% 55%;
+        }
+
+        .photo-label {
+            font-size: 1.8rem;
+            color: #7a4646;
+            background: #fff9f3;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 3px solid #ffb4a2;
+            box-shadow: 0 5px 0 #ce9f8f;
+        }
+
+        .photo-hint {
+            font-size: 1.2rem;
+            color: #b57676;
+            margin-top: 8px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* ПОДАРКИ */
+        .gifts-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            margin-top: 25px;
+        }
+
+        .gift-item {
+            flex: 0 0 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .gift-box {
+            width: 190px;
+            height: 190px;
+            background: linear-gradient(145deg, #ffd0d0, #ffb6b6);
+            border-radius: 35px 35px 60px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5.8rem;
+            box-shadow: 0 18px 0 #b45f5f;
+            margin-bottom: 20px;
+            border: 4px solid #fff;
+            position: relative;
+            transition: transform 0.2s;
+        }
+
+        .gift-box:hover {
+            transform: scale(1.08);
+        }
+
+        .gift-box::after {
+            content: "🎀";
+            position: absolute;
+            top: -18px;
+            font-size: 3.5rem;
+        }
+
+        .gift-label {
+            font-size: 1.8rem;
+            background: #ffede3;
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: 3px solid #ffb4a2;
+            box-shadow: 0 5px 0 #ce9f8f;
+        }
+
+        .gift-surprise {
+            margin-top: 15px;
+            padding: 15px;
+            background: #fff9d7;
+            border-radius: 50px;
+            font-size: 1.4rem;
+            color: #a53f3f;
+            border: 3px solid #ffacac;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.3s;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+        }
+
+        .gift-surprise.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* МЕДАЛЬКИ */
+        .medals-section {
+            margin: 50px 0 30px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .medals-title {
+            font-size: 2.3rem;
+            color: #975a5a;
+            margin-bottom: 40px;
+            font-family: 'Segoe Script', cursive;
+            text-align: center;
+        }
+
+        .medals-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .medal {
+            flex: 0 0 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .medal-icon {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(145deg, #ffd966, #ffb347);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            box-shadow: 0 15px 0 #b8860b, 0 20px 25px rgba(0,0,0,0.2);
+            border: 7px solid #fff3b0;
+            margin-bottom: 25px;
+            transition: transform 0.2s;
+        }
+
+        .medal:hover .medal-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .medal-text {
+            font-size: 1.7rem;
+            color: #6d3f3f;
+            background: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            border: 3px solid #ffb4a2;
+            box-shadow: 0 5px 0 #ce9f8f;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .medal-message {
+            font-size: 1.3rem;
+            color: #b34242;
+            background: #fefbd0;
+            padding: 12px;
+            border-radius: 40px;
+            min-height: 80px;
+            text-align: center;
+            border: 3px dashed #ffa07a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* ВЕСЁЛЫЙ БЛОК */
+        .fun-section {
+            margin: 50px 0 30px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .fun-title {
+            font-size: 2.5rem;
+            color: #b24e4e;
+            margin-bottom: 35px;
+            font-family: 'Segoe Script', cursive;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .fun-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 35px;
+        }
+
+        .fun-item {
+            flex: 0 1 300px;
+            background: #fff5f0;
+            border-radius: 60px;
+            padding: 30px 20px;
+            box-shadow: 0 18px 0 #dba9a9;
+            border: 3px solid white;
+        }
+
+        .fun-item h3 {
+            font-size: 2.2rem;
+            color: #7a3d3d;
+            margin-bottom: 20px;
+        }
+
+        .daisy {
+            font-size: 5.5rem;
+            cursor: pointer;
+            filter: drop-shadow(0 12px 6px #ffc8a2);
+        }
+
+        .fortune-text {
+            font-size: 1.4rem;
+            background: #fefbd0;
+            padding: 15px;
+            border-radius: 60px;
+            border: 3px dashed #ffa07a;
+            min-height: 90px;
+        }
+
+        .ladybug-game {
+            position: relative;
+            height: 200px;
+            background: #c9e9c0;
+            border-radius: 35px;
+            overflow: hidden;
+            border: 4px solid #7fb07f;
+            margin-bottom: 15px;
+        }
+
+        .ladybug {
+            position: absolute;
+            font-size: 2.8rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .bug-count {
+            font-size: 1.4rem;
+            color: #2d5e2d;
+        }
+
+        .music-button {
+            background: #ffd3c0;
+            border: none;
+            font-size: 3.5rem;
+            padding: 15px 35px;
+            border-radius: 90px;
+            cursor: pointer;
+            box-shadow: 0 12px 0 #b27a7a;
+            border: 3px solid white;
+            margin-top: 10px;
+        }
+
+        .music-message {
+            font-size: 1.4rem;
+            background: #ffefd2;
+            padding: 12px;
+            border-radius: 50px;
+            min-height: 70px;
+            margin-top: 15px;
+        }
+
+        .flowers {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 40px 0 30px;
+            flex-wrap: wrap;
+        }
+
+        .flower {
+            font-size: 4rem;
+            filter: drop-shadow(0 12px 10px #f5b0b0);
+            animation: sway 4s infinite alternate;
+        }
+
+        @keyframes sway {
+            0% { transform: rotate(-3deg) translateY(0); }
+            100% { transform: rotate(3deg) translateY(-7px); }
+        }
+
+        .signature {
+            text-align: right;
+            font-size: 2.2rem;
+            font-family: 'Segoe Script', cursive;
+            color: #9b5b5b;
+            border-top: 4px dotted #ffc9c9;
+            padding-top: 30px;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .footer-note {
+            background: #ffd9cf;
+            padding: 18px;
+            text-align: center;
+            color: #572e2e;
+            font-size: 1.5rem;
+            border-top: 5px double #ff9185;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="lace-top">
+            <span>🌸</span> <span>🌼</span> <span>🌷</span> <span>🌺</span> <span>🌹</span>
+        </div>
+
+        <div class="content">
+            <!-- 1. ПОЗДРАВЛЕНИЕ -->
+            <h1>💖 Любимой бабушке 💖</h1>
+            <div class="elegant-sub">с нежностью и благодарностью</div>
+
+            <div class="beautiful-verse">
+                <i>🌷</i>
+                <p>
+                    Бабушка, милая, светлая, родная,<br>
+                    В этот весенний, прозрачный денёк<br>
+                    Я тебе счастья от всей души желаю,<br>
+                    Чтоб каждый твой день, как сад, зацвести мог.
+                </p>
+                <p>
+                    Чтоб руки твои золотые не знали устали,<br>
+                    Чтоб внуки дарили тепло и улыбки,<br>
+                    Чтоб мартовский ветер унёс все печали,<br>
+                    А мы разгоняли минуты ошибки.
+                </p>
+                <div class="roses">🌹🌿🌹</div>
+            </div>
+
+            <!-- 2. ФОТОГРАФИИ - МЕСТА ДЛЯ ТРЁХ ФОТО -->
+            <div class="section-title">
+                📸 Наши любимые мгновения 📸
+            </div>
+
+            <div class="photo-gallery">
+                <!-- Фото 1: Бабушка -->
+                <div class="photo-card">
+                    <div class="photo-frame">
+                        <!-- СЮДА ВСТАВЬ ФОТО БАБУШКИ -->
+                        <img src="babulia.jpg" alt="Бабушка">
+                    </div>
+                    <div class="photo-label">Красивая</div>
+                    <div class="photo-hint"></div>
+                </div>
+
+                <!-- Фото 2: Внуки -->
+                <div class="photo-card">
+                    <div class="photo-frame">
+                        <!-- СЮДА ВСТАВЬ ФОТО ВНУКОВ -->
+                        <img src="babulia2.jpg" alt="Внуки">
+                    </div>
+                    <div class="photo-label">Лучшая</div>
+                    <div class="photo-hint"></div>
+                </div>
+
+                <!-- Фото 3: Бабушка с цветами -->
+                <div class="photo-card">
+                    <div class="photo-frame">
+                        <!-- СЮДА ВСТАВЬ ФОТО БАБУШКИ С ЦВЕТАМИ -->
+                        <img src="babulia3.jpg" alt="Бабушка с цветами">
+                    </div>
+                    <div class="photo-label">Умная</div>
+                    <div class="photo-hint"></div>
+                </div>
+            </div>
+
+            <!-- 3. ПОДАРКИ -->
+            <div class="section-title">
+                🎁 Подарки для бабушки 🎁
+            </div>
+            <div class="gifts-container">
+                <div class="gift-item" onclick="openGift(0)">
+                    <div class="gift-box">🌷</div>
+                    <div class="gift-label">Цветы</div>
+                    <div id="giftSurprise0" class="gift-surprise">🌹 прекрасные розы и тюльпаны! 🌹</div>
+                </div>
+                <div class="gift-item" onclick="openGift(1)">
+                    <div class="gift-box">🍫</div>
+                    <div class="gift-label">Конфеты</div>
+                    <div id="giftSurprise1" class="gift-surprise">🍬 самые сладкие и нежные конфеты! 🍬</div>
+                </div>
+                <div class="gift-item" onclick="openGift(2)">
+                    <div class="gift-box">🌸</div>
+                    <div class="gift-label">Духи</div>
+                    <div id="giftSurprise2" class="gift-surprise">💐 аромат весеннего сада! 💐</div>
+                </div>
+            </div>
+
+            <!-- 4. МЕДАЛЬКИ -->
+            <div class="medals-section">
+                <div class="medals-title">🏅 Награды для самой лучшей бабушки</div>
+                <div class="medals-row">
+                    <div class="medal" onclick="showMedalMessage(0)">
+                        <div class="medal-icon">🏆</div>
+                        <div class="medal-text">Лучшая бабушка</div>
+                        <div id="medalMessage0" class="medal-message">🌟 Ты самая добрая и заботливая!</div>
+                    </div>
+                    <div class="medal" onclick="showMedalMessage(1)">
+                        <div class="medal-icon">⭐</div>
+                        <div class="medal-text">За бесконечную любовь</div>
+                        <div id="medalMessage1" class="medal-message">💖 Твоя любовь согревает нас!</div>
+                    </div>
+                    <div class="medal" onclick="showMedalMessage(2)">
+                        <div class="medal-icon">👑</div>
+                        <div class="medal-text">Хранительница очага</div>
+                        <div id="medalMessage2" class="medal-message">🏡 Ты сердце нашей семьи!</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. ВЕСЁЛЫЙ БЛОК (С МУЗЫКОЙ) -->
+            <div class="fun-section">
+                <div class="fun-title">🎉 поиграй с нами! 🎉</div>
+                <div class="fun-container">
+                    <div class="fun-item">
+                        <h3>🌼 Ромашка-гадалка</h3>
+                        <div class="daisy" onclick="tellFortune()">🌼</div>
+                        <div id="fortuneResult" class="fortune-text">Нажми на ромашку!</div>
+                    </div>
+                    <div class="fun-item">
+                        <h3>🐞 Лови божьих коровок</h3>
+                        <div class="ladybug-game" id="ladybugGame" onclick="catchBug(event)">
+                            <div class="ladybug" id="bug1" style="top: 20px; left: 20px;">🐞</div>
+                            <div class="ladybug" id="bug2" style="top: 80px; left: 150px;">🐞</div>
+                            <div class="ladybug" id="bug3" style="top: 120px; left: 70px;">🐞</div>
+                        </div>
+                        <div class="bug-count" id="bugCount">Поймано: 0</div>
+                    </div>
+                    
+                    <!-- МУЗЫКАЛЬНЫЙ БЛОК С АВТОВОСПРОИЗВЕДЕНИЕМ -->
+                    <div class="fun-item">
+                        <h3>🎵 Музыкальное поздравление</h3>
+                        
+                        <!-- Скрытый аудио для автовоспроизведения -->
+                        <audio id="bgMusic" loop style="display:none;">
+                            <source src="Stas_Mikhajjlov_-_Vsjo_dlya_tebya_48203855.mp3" type="audio/mpeg">
+                        </audio>
+                        
+                        <!-- Видимый плеер (дубль для управления) -->
+                        <audio id="visiblePlayer" controls style="width:100%; max-width:260px; margin-bottom:15px; border-radius:40px; background:#ffede3;">
+                            <source src="Stas_Mikhajjlov_-_Vsjo_dlya_tebya_48203855.mp3" type="audio/mpeg">
+                            Твой браузер не поддерживает аудио.
+                        </audio>
+                        
+                        <div class="music-message" id="musicMessage">🎶 С праздником, бабушка! 🎶</div>
+                        <button class="music-button" onclick="playMusic()">🎁✨</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Цветы и подпись -->
+            <div class="flowers">
+                <span class="flower">🌷</span>
+                <span class="flower">🌸</span>
+                <span class="flower">🌼</span>
+                <span class="flower">🌺</span>
+                <span class="flower">🌹</span>
+            </div>
+
+            <div class="signature">
+                <span>С любовью, Аленка ❤️</span>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <i>🌺 Пусть этот день будет полон радости и тепла! 🌺</i>
+        </div>
+    </div>
+
+    <script>
+        // Подарки
+        function openGift(index) {
+            const surprise = document.getElementById(`giftSurprise${index}`);
+            surprise.classList.add('show');
+            createConfetti(15);
+            setTimeout(() => {
+                surprise.classList.remove('show');
+            }, 2500);
+        }
+
+        // Медальки
+        function showMedalMessage(index) {
+            const messages = [
+                "🌟 Бабушка, ты самая лучшая на свете!",
+                "💖 Твоя любовь согревает нас каждый день!",
+                "🏡 Спасибо за уют и тепло в доме!"
+            ];
+            const messageDiv = document.getElementById(`medalMessage${index}`);
+            messageDiv.textContent = messages[index];
+            messageDiv.style.background = '#fff9b0';
+            setTimeout(() => {
+                messageDiv.style.background = '#fefbd0';
+            }, 500);
+            createConfetti(8);
+        }
+
+        // Гадание
+        const fortunes = [
+            "🍬 Сегодня будет вкусный сюрприз!",
+            "🌷 Скоро приедут внуки в гости!",
+            "☀️ Весь день солнечное настроение!",
+            "📞 Жди приятного звонка!",
+            "🍰 Исполнится сладкое желание!",
+            "💝 Кто-то тебя очень любит!"
+        ];
+
+        function tellFortune() {
+            const result = document.getElementById('fortuneResult');
+            result.textContent = fortunes[Math.floor(Math.random() * fortunes.length)];
+            createConfetti(8);
+        }
+
+        // Божьи коровки
+        let caughtCount = 0;
+        function catchBug(event) {
+            if (event.target.classList.contains('ladybug')) {
+                event.target.style.opacity = '0';
+                event.target.style.pointerEvents = 'none';
+                caughtCount++;
+                document.getElementById('bugCount').textContent = `Поймано: ${caughtCount}`;
+                createConfetti(5);
+                
+                if (caughtCount === 3) {
+                    setTimeout(() => {
+                        alert('🎉 Все божьи коровки пойманы! Они принесут удачу! 🐞');
+                    }, 200);
+                }
+            }
+        }
+
+        // Движение жучков
+        function moveBugs() {
+            const bugs = document.querySelectorAll('.ladybug');
+            bugs.forEach(bug => {
+                if (bug.style.opacity !== '0') {
+                    bug.style.top = Math.random() * 140 + 'px';
+                    bug.style.left = Math.random() * 260 + 'px';
+                }
+            });
+        }
+        setInterval(moveBugs, 2000);
+
+        // МУЗЫКА: АВТОМАТИЧЕСКОЕ ВОСПРОИЗВЕДЕНИЕ
+        document.addEventListener('DOMContentLoaded', function() {
+            const bgMusic = document.getElementById('bgMusic');
+            const visiblePlayer = document.getElementById('visiblePlayer');
+            
+            // Пытаемся включить музыку автоматически
+            let playPromise = bgMusic.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log("Музыка играет автоматически");
+                    // Синхронизируем видимый плеер
+                    visiblePlayer.currentTime = bgMusic.currentTime;
+                }).catch(error => {
+                    console.log("Автовоспроизведение заблокировано браузером");
+                    document.getElementById('musicMessage').innerHTML = '🔊 Нажми на кнопку, чтобы включить музыку';
+                });
+            }
+            
+            // Синхронизация плееров
+            bgMusic.addEventListener('timeupdate', function() {
+                visiblePlayer.currentTime = bgMusic.currentTime;
+            });
+            
+            visiblePlayer.addEventListener('play', function() {
+                bgMusic.play();
+            });
+            
+            visiblePlayer.addEventListener('pause', function() {
+                bgMusic.pause();
+            });
+            
+            visiblePlayer.addEventListener('volumechange', function() {
+                bgMusic.volume = visiblePlayer.volume;
+            });
+        });
+
+        // Музыка (текстовое сопровождение для кнопки)
+        const melodies = [
+            "🎶 Тра-ля-ля, сегодня праздник!",
+            "🎵 С 8 марта, бабуля!",
+            "🎼 Ля-ля-ля, весна пришла!",
+            "🎹 Самый лучший день!"
+        ];
+
+        function playMusic() {
+            const bgMusic = document.getElementById('bgMusic');
+            const visiblePlayer = document.getElementById('visiblePlayer');
+            
+            // Включаем музыку
+            bgMusic.play();
+            visiblePlayer.play();
+            
+            // Меняем сообщение
+            document.getElementById('musicMessage').textContent = melodies[Math.floor(Math.random() * melodies.length)];
+            createConfetti(12);
+        }
+
+        // Конфетти
+        function createConfetti(count) {
+            const colors = ['#ffb3ba', '#ffdfba', '#ffffba', '#baffc9', '#bae1ff'];
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'fixed';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-10px';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.width = Math.random() * 15 + 5 + 'px';
+                    confetti.style.height = confetti.style.width;
+                    confetti.style.borderRadius = '50%';
+                    confetti.style.pointerEvents = 'none';
+                    confetti.style.zIndex = '9999';
+                    confetti.style.animation = 'fall ' + (Math.random() * 1 + 0.8) + 's linear forwards';
+                    document.body.appendChild(confetti);
+                    setTimeout(() => confetti.remove(), 1800);
+                }, i * 30);
+            }
+        }
+
+        // Стиль для анимации
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
